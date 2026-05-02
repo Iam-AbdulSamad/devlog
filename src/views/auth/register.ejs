@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevLog - Register</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="auth-container">
+        <h1>DevLog</h1>
+        <h2>Create your account</h2>
+
+        <% if (error) { %>
+            <div class="error-message">
+                <%= error %>
+            </div>
+            <% } %>
+
+                <form action="/auth/register" method="POST">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required autocomplete="email" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required minlength="8" />
+                    </div>
+
+                    <button type="submit">Create Account</button>
+                </form>
+
+                <p>Already have an account? <a href="/auth/login">Login</a></p>
+    </div>
+</body>
+
+</html>
